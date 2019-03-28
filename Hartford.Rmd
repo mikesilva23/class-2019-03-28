@@ -13,3 +13,15 @@ library(sf)
 library(fs)
 ```
 
+```{r, echo=FALSE}
+x <- read_rds(url("https://stacks.stanford.edu/file/druid:tr137st9964/tr137st9964_ct_hartford_2019_02_25.rds"))
+```
+
+```{r, echo=FALSE}
+asian <- 
+x %>%
+  filter(subject_race == "asian/pacific islander") %>%
+  count()
+  
+```
+The number of stops for Asian Americans and Pacific Islanders is `r asian`
